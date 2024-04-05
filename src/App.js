@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>
-      Hello dear
+      Welcome
      </h1>
      <p>This was coded by <a href ="#">Ella Ameh</a>, open-sourced on <a href ="https://github.com/Chubeeh/react-project" 
      target='blank'>Github</a> and hosted on Vercel</p>
