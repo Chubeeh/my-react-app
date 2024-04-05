@@ -7,8 +7,8 @@ function App() {
       <h1>
       Welcome app
      </h1>
-     <p>This was coded by <a href ="#">Ella Ameh</a>, open-sourced on <a href ="https://github.com/Chubeeh/my-react-app" 
-     target='blank'>Github</a> and hosted on <a href='' target='blank'>Vercel</a></p>
+     <p>This was coded by <a href ="https://my-react-app-six-puce.vercel.app/">Ella Ameh</a>, open-sourced on <a href ="https://github.com/Chubeeh/my-react-app" 
+     target='blank'>Github</a> and hosted on <a href='https://my-react-app-six-puce.vercel.app/' target='blank'>Vercel</a></p>
     </div>
   );
 }
