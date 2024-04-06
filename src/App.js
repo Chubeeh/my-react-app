@@ -1,15 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Weather from './Weather';
 
 function App() {
   return (
     <div className="App">
-      <h1>
-      Welcome app
+      <div className='container'>
+        <h1 >
+      Weather Forecast
      </h1>
-     <p>This was coded by <a href ="https://my-react-app-six-puce.vercel.app/">Ella Ameh</a>, open-sourced on <a href ="https://github.com/Chubeeh/my-react-app" 
+     <Weather />
+     <p>This was coded by <a href ="https://my-react-app-six-puce.vercel.app/" target='blank'>Ella Ameh</a>, open-sourced on <a href ="https://github.com/Chubeeh/my-react-app" 
      target='blank'>Github</a> and hosted on <a href='https://my-react-app-six-puce.vercel.app/' target='blank'>Vercel</a></p>
     </div>
+    </div>
+  
   );
 }
 
