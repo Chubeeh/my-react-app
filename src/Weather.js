@@ -15,7 +15,7 @@ export default function Weather(props) {
             wind: response.data.wind.speed,
             date: "Saturday 07:15",
             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
-            city: response.data.name
+            city: response.city
 
 
            
@@ -42,7 +42,7 @@ export default function Weather(props) {
                 </div>
                 </div>
             </form>
-            <h1 className="mt-5">Kogi{weatherData.city}</h1>
+            <h1 className="mt-5">{props.defaultCity}</h1>
     
             <div className="row mt-3">
                 <div className="col-8">
