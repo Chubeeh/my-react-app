@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import  axios  from "axios";
-import PresentedDate from "./PresentedDate";
+import WeatherInfo from "./WeatherInfo";
 import { RotatingLines } from 'react-loader-spinner';
 import "./Weather.css"
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] =useState({loaded: false});
+    const [city, setCity] = useState(props.defaultCity);
     function handleResponse(response){
      console.log(response.data);
         setWeatherData({
@@ -16,21 +17,37 @@ export default function Weather(props) {
             description: response.data.condition.description,
             wind: response.data.wind.speed,
             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
-            city: response.city
+            city: response.data.city
            
         });
         
     }
+    function search(){
+        let apiKey ="c4a8tao19480ddff4eb37f66462cea94";
+        let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+        axios.get(apiUrl).then(handleResponse);
+    }
+
+    function handleSubmit(event){
+        event.preventDefault();
+        search();
+    }
+    function handleCityChange(event){
+        setCity(event.target.value);
+    }
+
     if (weatherData.loaded){
     return (
         <div className="Weather">
-            <form className="form-handle">
+            <form className="form-handle" onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-9">
                 <input type="search"
                  placeholder="Enter a city..." 
                  autoFocus="on"
                  className="input-form-one"
+                 onChange={handleCityChange}
                  />
                 </div>
                 <div className="col-3">
@@ -40,39 +57,12 @@ export default function Weather(props) {
                 />
                 </div>
                 </div>
-            </form>
-            <h1 className="mt-5">{props.defaultCity}</h1>
-    
-            <div className="row mt-3">
-                <div className="col-8">
-                    <p className="text-muted">
-   <span className="Weather-description">
-  <PresentedDate date={weatherData.date} />, {weatherData.description}
-</span>
-  <span className="Weather-description">Humidity:<span className="red">{weatherData.humidity}%</span>, Wind:<span className="red"> {weatherData.wind}km/h</span>
- 
-</span>
-   
-  </p>
-                    
-                    </div>
-                <div className="col-4 d-flex justify-content-end">
-                    <div className="img-box">
-                        <span className="main-img">
-                    <img src={weatherData.iconUrl} className="img-flud" alt ={weatherData.description} />
-                </span>
-                <span className="temp-value"><strong>{Math.round(weatherData.temperature)}</strong></span>
-               
-                <span className="temp-unit">°C</span>
-                </div>
-                 </div>
-            </div>
+     </form>
+     <WeatherInfo data={weatherData}/>
+             
 </div>
     );} else {
-    let apiKey ="c4a8tao19480ddff4eb37f66462cea94";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
-
-   axios.get(apiUrl).then(handleResponse);
+        search();
     return (
          <RotatingLines
             visible={true}
