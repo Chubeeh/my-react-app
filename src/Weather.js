@@ -16,7 +16,7 @@ export default function Weather(props) {
             humidity: response.data.temperature.humidity,
             description: response.data.condition.description,
             wind: response.data.wind.speed,
-            iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+            iconUrl: `https://openweathermap.org/img/wn/${response.data.condition.icon_url}@2x.png`,
             city: response.data.city
            
         });
