@@ -34,9 +34,15 @@
         border-radius: 5px;
     }
     .Weather .Weather-description{
-        padding-left: 8px;
+        display: flex;
         text-transform: capitalize;
-    }
+        padding-left: 8px;
+        }
+        .Weather .red{
+            color: red;
+            opacity: 0.7;
+            text-transform: lowercase;
+        }
     .Weather .img-box{
         position: relative;
         top: -30px;
@@ -64,8 +70,4 @@
                 line-height: 1;
                 position: relative;
                 top: -42px;
-        }
-        .Weather .temp-data-value{
-            color: red;
-            opacity: 0.7;
         }

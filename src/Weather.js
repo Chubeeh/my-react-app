@@ -1,23 +1,22 @@
 import React, {useState} from "react";
 import  axios  from "axios";
+import PresentedDate from "./PresentedDate";
 import { RotatingLines } from 'react-loader-spinner';
 import "./Weather.css"
 
 export default function Weather(props) {
     const [weatherData, setWeatherData] =useState({loaded: false});
     function handleResponse(response){
-        console.log(response.data);
+     console.log(response.data);
         setWeatherData({
             loaded: true,
+            date: new Date(response.data.time * 1000),
             temperature: response.data.temperature.current,
             humidity: response.data.temperature.humidity,
             description: response.data.condition.description,
             wind: response.data.wind.speed,
-            date: "Saturday 07:15",
             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
             city: response.city
-
-
            
         });
         
@@ -46,9 +45,16 @@ export default function Weather(props) {
     
             <div className="row mt-3">
                 <div className="col-8">
-                    <p className="text-muted"><span className="Weather-description">{weatherData.date} {weatherData.description}</span> <br />
-                    <span className="Weather-description">Humidity:<span className="temp-data-value">{weatherData.humidity}%</span>, 
-                    </span>Wind: <span className="temp-data-value">{weatherData.wind}km/h</span></p>
+                    <p className="text-muted">
+   <span className="Weather-description">
+  <PresentedDate date={weatherData.date} />, {weatherData.description}
+</span>
+  <span className="Weather-description">Humidity:<span className="red">{weatherData.humidity}%</span>, Wind:<span className="red"> {weatherData.wind}km/h</span>
+ 
+</span>
+   
+  </p>
+                    
                     </div>
                 <div className="col-4 d-flex justify-content-end">
                     <div className="img-box">
