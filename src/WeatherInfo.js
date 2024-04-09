@@ -1,6 +1,6 @@
 import React from "react";
 import PresentedDate from "./PresentedDate";
-
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props){
     return(
@@ -22,7 +22,7 @@ export default function WeatherInfo(props){
                 <div className="col-4 d-flex justify-content-end">
                     <div className="img-box">
                         <span className="main-img">
-                    <img src={props.data.iconUrl} className="img-flud" alt ={props.data.description} />
+                           <WeatherIcon code={props.data.icon} />  
                 </span>
                 <span className="temp-value"><strong>{Math.round(props.data.temperature)}</strong></span>
                
