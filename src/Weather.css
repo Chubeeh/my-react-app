@@ -51,7 +51,7 @@
     }
     .Weather .main-img{
         position: relative;
-        top: -6px;
+        top: -8px;
     }
     .Weather .temp-value{
         color: #212121;
