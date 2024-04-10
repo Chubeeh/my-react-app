@@ -12,7 +12,7 @@ function App() {
      </h1>
      <Weather defaultCity="Botswana"/>
      <footer>
-     <p className='last-text'>This was coded by <a href ="https://my-react-app-six-puce.vercel.app/" target='blank'>Ella Ameh</a>, open-sourced on <a href ="https://github.com/Chubeeh/my-react-app" 
+     <p className='last-text'>This project was coded by <a href ="https://my-react-app-six-puce.vercel.app/" target='blank'>Ella Ameh</a>, open-sourced on <a href ="https://github.com/Chubeeh/my-react-app" 
      target='blank'>Github</a> and hosted on <a href='https://my-react-app-six-puce.vercel.app/' target='blank'>Vercel</a></p>
      </footer>
     </div>
