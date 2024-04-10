@@ -56,10 +56,10 @@
     }
     .Weather .temp-value{
         color: #212121;
-            font-size: 53px;
+            font-size: 42px;
             font-weight: 400;
             line-height: 1;
-            top:-25px;
+            top:-20px;
             position: relative;
 
         }
@@ -70,7 +70,7 @@
                 line-height: 36px;
                 line-height: 1;
                 position: relative;
-                top: -50px;
+                top: -40px;
         }
         .Weather .WeatherTemperature a{
             text-decoration: none;
