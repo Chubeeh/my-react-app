@@ -14,7 +14,7 @@
   text-align: center;
 
 }
-@media screen and (max-width:500px){
+@media screen and (min-width:500px){
   .App{
     padding: 50px 20px;
   }
