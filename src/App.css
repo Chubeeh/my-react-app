@@ -14,7 +14,10 @@
   text-align: center;
 
 }
-@media screen and (min-width:375px){
+.App footer p a{
+  text-decoration: none;
+}
+@media screen and (max-width:375px){
   .App{
     padding: 50px 20px;
   }
