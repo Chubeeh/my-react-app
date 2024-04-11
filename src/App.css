@@ -1,9 +1,6 @@
-body{
-  background: #e9ecef;
-
-}
 .App {
   background: #e9ecef;
+  padding: 100px 60px;
 }
 .App .heading{
   font-size: 30px;
@@ -11,9 +8,20 @@ body{
   text-align: center;
   opacity: 0.6;
 }
-.App footer{
+.App footer p{
   font-size: 11px;
-  margin: 0;
+  margin-bottom: 30px;
   text-align: center;
 
+}
+@media screen {
+  .App{
+    padding: 70px 30px;
+  }
+  .App .heading {
+    font-size: 20px;
+  }
+  .App footer p{
+    font-size: 8px;
+  }
 }

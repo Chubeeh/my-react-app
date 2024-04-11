@@ -5,7 +5,7 @@
     display: block;
     margin: 30px auto;
     border-radius: 5px;
-    box-shadow: 0 30px 50px #41326414;
+    box-shadow: 20px 30px 50px #41326414;
 }
 .Weather h1{
     font-family: Helvetica, sans-serif;
@@ -15,6 +15,7 @@
 }
 .Weather form{
     margin: 10px;
+    margin-top: 20px;
 }
 .Weather .input-form-one{
     padding: 11px;
